@@ -1,0 +1,56 @@
+# Lab 06 - LeAnne Rheaume
+#random numbers
+
+#import libraries
+import os
+import random
+import math
+import numpy
+
+#setting up user range input module
+def get_user_range():
+    while True:
+        try:
+            lower_range = int(input("Put in the low number of the range you want to use:"))
+            upper_range = int(input("Put in the high number of the range you want to use:"))
+            if lower_range >= upper_range:
+                print("That is not a valid suggestion. Try again with numbers lower than the higher ones.")
+            else:
+                return lower_range, upper_range
+        except ValueError:
+                print("Were you dropped on your head as a child? Try again. That is not going to work out as a range.")
+
+#setting up the generator for the random number within the range
+def generate_random_range(lower_range, upper_range):
+    return random.randint(lower_range, upper_range)
+
+#the main program inintialization
+if __name__ == "__main__":
+    print("You're asking me for a number between a low point and high point. Choose the range of numbers.")
+    lower_range, upper_range = get_user_range()
+    random_number = generate_random_range(lower_range, upper_range)
+    print(f"The random number in the range [{lower_range} , {upper_range}] you wanted pulled out of your ear is:")
+
+#attempting to write the outcome of the program to it's file
+with open("C:/repos/Python/Fundamentals I/MOdule2/lrheaume_chap6_lab.py", 'w') as f:
+    x = lower_range
+    y = upper_range
+#range set up for writing to the file
+    for i in range(x,y):
+        x = lower_range
+        y = upper_range
+    f.write(str(i) + '\n')
+    print()
+    f.close
+#snarky concluding statement
+print("Congrats on your randomized number. I hope it was all you wanted.")
+
+#couldn't get this part to work, unsure if I overcomplicated it or not
+def file_name():
+    with open({os.path.join(file_name)}, "w") as file:
+        for number in random_number:
+            file.write (str(random_number) + "\n")
+            try:
+                print(f"{generate_random_range} random numbers generated from the user and saved to '{w}'")
+            except:
+                print("an exception occured.")
